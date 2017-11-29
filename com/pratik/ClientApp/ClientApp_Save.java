@@ -1,4 +1,4 @@
-package com.nt.user;
+package com.pratik.ClientApp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.nt.domain.Emp;
+import com.pratik.BO_Domain.product;
 
 public class ClientApp {
 
@@ -29,19 +29,20 @@ public class ClientApp {
         //get session object
 		        ses = factory.openSession();
     //create domain/BO class object
-		Emp em = null;
-        	em = new Emp();
+		product prod = null;
+        	prod = new product();
 		Transaction tx = null;
 
     //set values to the bo/entity class object
-		em.setEid(9999);
-		em.setEname("gannu");
-		em.setEsalary(40000);
-		em.setEcity("bhor");
+
+		prod.setPid(111);
+		prod.setPname("Tea");
+		prod.setPrice(400f);
+		prod.setQuantity(3);
 
 		try {
 			tx = ses.beginTransaction();
-			ses.save(em);   //saving object using ses.save() method
+			ses.save(prod);   //saving object using ses.save() method
 			tx.commit();
 			System.out.println("object is saved");
 		} catch (Exception e) {
