@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.pratikn.Emp;
+import com.pratik.BO_Domain.product;
 
 public class ClientApp_Update {
 
@@ -29,28 +29,27 @@ public class ClientApp_Update {
         //get session object
 		        ses = factory.openSession();
     //create domain/BO class object
-		Emp em = null;
-        	em = new Emp();
+		product prod = null;
+			prod = new product();
 		Transaction tx = null;
     //search the recird is exist or not
-		em=ses.get(Emp.class, 22);
-		if(em!=null)  //if record is found
+		prod=ses.get(product.class, 22);
+		if(prod!=null)  //if record is found
 		{
         //set values to the bo/entity class object to update
-			em.setEcity("Lonand");
-			em.setEsalary(50000);
+			prod.setPrice(350f);
+			prod.setQuantity(4);
 			try {
 				tx = ses.beginTransaction();
-				ses.update(em);     //update record using ses.update()
+				ses.update(prod);     //update record using ses.update()
 				tx.commit();    //save changes to database
 				System.out.println("object is updated");
 			} catch (Exception e) {
 				tx.rollback();
 
 			}
-      //show the updated record
+
 			System.out.println("===Record Found and Updated===");
-			System.out.println("\t"+em.getEid()+"\t"+em.getEname()+"\t"+em.getEsalary()+"\t"+em.getEcity());
 		}
 		else
 		{
