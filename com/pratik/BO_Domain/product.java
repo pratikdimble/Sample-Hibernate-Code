@@ -6,38 +6,38 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="productdata")
-public class prod {
+public class product {
 	private int pid;
 	private String pname;
 	private float price;
 	private int quantity;
 		
-	public prod() {
+	public product() {
 		super();
 	}
 	@Id
-	@Column(name="PROD_ID")
+	@Column(name="PRODID")
 	public int getPid() {
 		return pid;
 	}
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	@Column(name="PROD_NAME")
+	@Column(name="PRODNAME")
 	public String getPname() {
 		return pname;
 	}
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	@Column(name="PROD_COST")
+	@Column(name="PRICE")
 	public float getPrice() {
 		return price;
 	}
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	@Column(name="PROD_QUANTITY")
+	@Column(name="QUANTITY")
 	public int getQuantity() {
 		return quantity;
 	}
@@ -47,7 +47,7 @@ public class prod {
 
 	@Override
 	public String toString() {
-		return "prod [pid=" + pid + ", pname=" + pname + ", price=" + price + ", quantity=" + quantity + "]";
+		return "product [pid=" + pid + ", pname=" + pname + ", price=" + price + ", quantity=" + quantity + "]";
 	}
 	
 	
