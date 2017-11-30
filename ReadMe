@@ -1,3 +1,8 @@
+# Sample-Hibernate-Code
+save, update,delete,SaveOrUpdate,Get
+*******************************************************************************************************************
+*******************************************************************************************************************
+
 firstly download oracle database client and hibernate orm------------>
 for ORACLE:http://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-win64soft-094461.html
 for Hibernate:http://hibernate.org/orm/releases/5.2/ 
